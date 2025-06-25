@@ -1,0 +1,75 @@
+﻿<style>
+    form {
+        max-width: 400px;
+        margin: 40px auto; /* center form */
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        form div {
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    input[type="text"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: royalblue;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #bb2d3b;
+        }
+
+    .btn-success {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+    }
+</style>
+
+@model Foodiee.Models.Restaurant
+<form asp-action="AddRestaurant" asp-controller="Admin" method="post">
+	<label asp-for="RestName">Enter Fullname :</label>
+	<input type="text" asp-for="RestName" />
+
+	<label asp-for="Email">Enter Email :</label>
+	<input type="email" asp-for="Email" />
+	@* <span asp-validation-for="Email" class="text-danger">Enter vaid mail id</span> <br/> *@
+	<label asp-for="PhoneNo">Enter phone number :</label>
+	<input type="text" asp-for="PhoneNo" />
+	@* <span asp-validation-for="Fullname" class="text-danger">phone number should be of 10 characters</span> <br/> *@
+	<label asp-for="Location">Enter area :</label>
+	<input type="text" asp-for="Location" />
+	<label asp-for="Description">Enter description :</label>
+	<input type="text" asp-for="Description" />
+	<label asp-for="RestaurantImage">Upload image :</label>
+	<input type="file" asp-for="RestaurantImage" />
+	@* <span asp-validation-for="Fullname" class="text-danger">Age should be less tha 120</span> <br/> *@
+	<label asp-for="OwnerId">Owner Id :</label>
+	<input type="text" asp-for="OwnerId" />
+	<input type="submit" />
+</form>
+@{
+	if (ViewBag.e != null)
+	{
+		<div class="btn btn-info">@ViewBag.e </div>
+	}
+
+}

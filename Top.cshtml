@@ -1,0 +1,18 @@
+﻿<div>
+	@{
+		foreach (var item in @ViewBag.res_foodtop5)
+		{
+			<div>
+			food	@item.FoodId : average rating : @item.AvgRating
+			</div>
+		}
+		foreach (var item in @ViewBag.res_resttop5)
+		{
+			<div>
+			Restaurant	@item.RestId : average rating :@item.AvgRating1
+			</div>
+		}
+
+	}
+
+</div>

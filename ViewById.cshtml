@@ -1,0 +1,41 @@
+﻿@model Foodiee.Models.UserReg
+<style>
+	.card {
+		border: 2px solid;
+		padding: 20px;
+		margin: 10px;
+		border-radius: 8px;
+		background-color: white;
+		border-color: darkgoldenrod;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+</style>
+<div class="row text-center">
+	@{
+		if (Model != null)
+		{	
+				<div class="col-md-3">
+					<div class="card">
+						<div class="card-header">Users</div>
+						<div class="card-body">
+							<div>User id : @Model.UserId</div>
+							<div>Name : @Model.Fullname</div>
+							<div>User Name : @Model.Username</div>
+							<div>Email : @Model.Email</div>
+							<div>User Type : User</div>
+							<div>Mobile number : @Model.Phone</div>
+							<div>Area : @Model.Area</div>
+							<div>City : @Model.City</div>
+							<div>Age : @Model.Age</div>
+						</div>
+					</div>
+				</div>
+		
+		}
+		else
+		{
+			<div>NoData Found</div>
+		}
+
+	}
+</div>

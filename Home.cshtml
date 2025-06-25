@@ -1,0 +1,111 @@
+﻿<style>
+	.card {
+		border:2px solid;
+		padding:20px;
+		margin:10px;
+		border-radius:8px;
+		background-color:white;
+		border-color:darkgoldenrod;
+		font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		color:limegreen;
+	}
+</style>
+<div>Home for admin page</div>
+<div class="row text-center">
+	<div class="col-md-4">
+		@{
+			<div class="card">
+			<div class="card-header">Users</div>
+				<div class="card-body">
+					<h5 >User Count</h5>
+					@if (@ViewBag.user_count != 0)
+					{
+						<div>@ViewBag.user_count</div>
+					}
+					else
+					{
+						<div>0</div>
+					}
+				</div>
+			</div>
+		}
+	</div>
+	<div class="col-md-4">
+		@{
+			<div class="card">
+			<div class="card-header">Restaurants</div>
+				<div class="card-body">
+					<h5>Total Number of Restaurants</h5>
+					@if (@ViewBag.restaurant_count != 0)
+					{
+						<div>@ViewBag.restaurant_count</div>
+					}
+					else
+					{
+						<div>0</div>
+					}
+				</div>
+			</div>
+		}
+	</div>
+	<div class="col-md-4">
+		@{
+			<div class="card">
+				<div class="card-header">Delivery Partner</div>
+				<div class="card-body">
+					<h5>Total Number of Delivery Agents</h5>
+					@if (@ViewBag.delivery_count != 0)
+					{
+						<div>@ViewBag.delivery_count</div>
+					}
+					else
+					{
+						<div>0</div>
+					}
+				</div>
+			</div>
+		}
+	</div>
+	<div class="col-md-4">
+	<a href="@Url.Action("RestaurantApproval","Admin")" class="btn btn-light">
+		
+			@{
+				<div class="card">
+					<div class="card-header">Pending Approval</div>
+					<div class="card-body">
+						<h5>Pending restaurants Approval</h5>
+						@if (@ViewBag.pending_List_count != 0)
+						{
+							<div>@ViewBag.pending_List_count</div>
+						}
+						else
+						{
+							<div>0</div>
+						}
+					</div>
+				</div>
+			}
+	</a>
+	</div>
+	<div class="col-md-4">
+		@{
+			<div class="card">
+				<div class="card-header">Delivery Partner</div>
+				<div class="card-body">
+					<h5>Total Number of Delivery Agents</h5>
+					@if (@ViewBag.delivery_count != 0)
+					{
+						<div>@ViewBag.delivery_count</div>
+					}
+					else
+					{
+						<div>0</div>
+					}
+				</div>
+			</div>
+		}
+	</div>
+	
+</div>
+
+

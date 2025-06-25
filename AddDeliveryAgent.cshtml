@@ -1,0 +1,94 @@
+﻿
+<style>
+    form {
+        max-width: 400px;
+        margin: 40px auto; /* center form */
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        form div {
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    input[type="text"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: royalblue;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #bb2d3b;
+        }
+
+    .btn-success {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+    }
+</style>
+
+@model Foodiee.Models.DeliverReg
+
+<h2>Delivery Partner Registration</h2>
+
+<form asp-action="AddDeliveryAgent" asp-controller="Admin" method="post">
+
+        <label asp-for="Fullname"></label>
+    <input type="text" asp-for="Fullname" class="form-control" />
+        <label asp-for="Username"></label>
+    <input type="text"  asp-for="Username" class="form-control" />
+        <label asp-for="Password">Password</label>
+    <input type ="text" type="password" asp-for="Password" class="form-control" />
+        <label asp-for="Email"></label>
+    <input type="text" asp-for="Email" class="form-control" type="email" />
+  
+        <label asp-for="Phone"></label>
+    <input type="text" asp-for="Phone" class="form-control" />
+  
+        <label asp-for="Area"></label>
+    <input type="text" asp-for="Area" class="form-control" />
+   
+        <label asp-for="City"></label>
+    <input type="text" asp-for="City" class="form-control" />
+    
+        <label asp-for="Age"></label>
+    <input type="text" asp-for="Age" class="form-control" type="number" />
+    
+        <label asp-for="DlNo">Driver's License No</label>
+    <input type="text" asp-for="DlNo" class="form-control" />
+    
+        <label asp-for="VehicleNo">Vehicle No</label>
+        <input asp-for="VehicleNo" class="form-control" />
+    
+        <label asp-for="Sq1">Security Question 1</label>
+    <input type="text" asp-for="Sq1" class="form-control" />
+  
+        <label asp-for="Sq2">Security Question 2</label>
+    <input type="text" asp-for="Sq2" class="form-control" />
+
+    <input type="submit" class="btn btn-primary" value="Register" />
+
+</form>
+
+@if (ViewBag.e != null)
+{
+    <div class="alert alert-info mt-2">@ViewBag.e</div>
+}

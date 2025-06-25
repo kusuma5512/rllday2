@@ -1,0 +1,63 @@
+﻿<style>
+    form {
+        max-width: 400px;
+        margin: 40px auto; /* center form */
+        padding: 20px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        form div {
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+    input[type="text"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background-color: darkgoldenrod;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #bb2d3b;
+        }
+
+    .btn-success {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+    }
+</style>
+
+@model Foodiee.Models.Restaurant
+@{
+	<form method="post">
+		<div>Update the details for the userId : @Model.RestaurantId</div>
+		<input type="hidden" name="RestaurantId" value="@Model.RestaurantId" />
+		<input type="text" value="@Model.RestName" name="RestName" />
+		<input type="text" value="@Model.Email" name="Email" />
+		<input type="text" value="@Model.PhoneNo" name="PhoneNo" />
+		<input type="text" value="@Model.Location" name="Location" />
+		<input type="text" value="@Model.Description" name="Description" />
+		<input type="submit" value="update" />
+	</form>
+	if (ViewBag.i > 0)
+	{
+		<div class="btn btn-success">Data modified successfuly</div>
+	}
+}

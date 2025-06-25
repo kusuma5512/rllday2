@@ -1,0 +1,50 @@
+﻿@model List<Foodiee.Models.Registration>
+
+	<style>
+	.card {
+		border: 2px solid;
+		padding: 20px;
+		margin: 10px;
+		border-radius: 8px;
+		background-color: white;
+		border-color: darkgoldenrod;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+</style>
+<div class="row text-center">
+	@{
+		if (Model != null)
+		{
+			foreach (var i in Model)
+			{
+				<div class="col-md-3">
+					<div class="card">
+						<div class="card-header">Users</div>
+						<div class="card-body">
+							<div>User id : @i.RegId</div>
+							<div>Name : @i.Fullname</div>
+							<div>User Name : @i.Username</div>
+							@* <div>@i.Password</div> *@
+							<div>@i.Email</div>
+							<div>User Type : @i.RoleName</div>
+							<div>Mobile number : @i.Phone</div>
+							<div>Address : @i.Address</div>
+							@* <div>@i.Sq1</div>
+					<div>@i.Sq2</div> *@
+						</div>
+						<footer>
+							<a href="@Url.Action("EditAdmin","Admin", new { id = i.RegId })"
+							   class="btn btn-info">Update</a>
+							
+						</footer>
+					</div>
+				</div>
+			}
+		}
+		else
+		{
+			<div>NoData Found</div>
+		}
+
+	}
+</div>

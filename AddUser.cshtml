@@ -1,0 +1,39 @@
+﻿
+@model Foodiee.Models.UserReg
+<form asp-action="AddUser" asp-controller="Admin" method="post">
+	<label asp-for="Fullname">Enter Fullname :</label>
+	<input type="text" asp-for="Fullname" /> 
+	@* <span asp-validation-for="Fullname" class="text-danger">Name should only contain alphabets</span><br /> *@
+	<label asp-for="Username">Enter USername :</label>
+	<input type="text" asp-for="Username" /> 
+	@* <span asp-validation-for="Username" class="text-danger">User name cannot conatin special characters</span><br /> *@
+	<label asp-for="Password">Enter Password :</label>
+	<input type="password" asp-for="Password" /> 
+	@* <span asp-validation-for="Fullname" class="text-danger">Passord should be stron</span><br /> *@
+	<label asp-for="Email">Enter Email :</label>
+	<input type="email" asp-for="Email" />
+	@* <span asp-validation-for="Email" class="text-danger">Enter vaid mail id</span> <br/> *@
+	<label asp-for="Phone">Enter phone number :</label>
+	<input type="text" asp-for="Phone" />
+	@* <span asp-validation-for="Fullname" class="text-danger">phone number should be of 10 characters</span> <br/> *@
+	<label asp-for="Area">Enter area :</label>
+	<input type="text" asp-for="Area" />
+	<label asp-for="City">Enter city :</label>
+	<input type="text" asp-for="City" />
+	<label asp-for="Age">Enter Age :</label>
+	<input type="text" asp-for="Age" />
+	@* <span asp-validation-for="Fullname" class="text-danger">Age should be less tha 120</span> <br/> *@
+	<label asp-for="Sq1">what is your fantasy :</label>
+	<input type="text" asp-for="Sq1" />
+	<label asp-for="Sq2">what is your fav color :</label>
+	<input type="text" asp-for="Sq2" />
+	<input type="submit"/>
+</form>
+
+@{
+	if(ViewBag.e!=null)
+	{
+		<div class="btn btn-info">@ViewBag.e </div>
+	}
+
+}

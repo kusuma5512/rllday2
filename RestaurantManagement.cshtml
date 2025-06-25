@@ -1,0 +1,45 @@
+﻿<style>
+	.card {
+		border: 2px solid;
+		padding: 20px;
+		margin: 10px;
+		border-radius: 8px;
+		background-color: white;
+		border-color: darkgoldenrod;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+</style>
+
+@model List<Foodiee.Models.Restaurant>
+<div>Restaurant management </div>
+<div class="row text-center">
+@{
+	if (Model != null)
+	{
+		foreach (var i in Model)
+		{
+			<div class="col-md-3">
+			<div class="card">
+				<div class="card-header">Owner</div>
+				<div>@i.RestaurantId</div>
+				<div>@i.RestName</div>
+				<div>@i.Owner</div>
+				<div>@i.OwnerId</div>
+				<div>@i.Email</div>
+				@*<img src="~/@i.RestaurantImage" />*@
+				<div>@i.Location</div>
+				<div>@i.Status</div>
+				<div>@i.Description</div>
+				
+			</div>
+			</div>
+			
+		}
+	}
+	else
+	{
+		<div>NoData Found</div>
+	}
+
+}
+</div>

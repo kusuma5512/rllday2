@@ -1,0 +1,19 @@
+﻿@model Foodiee.Models.Registration
+@{
+	<form method="post">
+		<div>Update the details for the userId : @Model.RegId for admin</div>
+		<input type="hidden" name="RegId" value="@Model.RegId" />
+		<input type="text" value="@Model.Fullname" name="Fullname" />
+		<input type="text" value="@Model.Username" name="Username" />
+		<input type="text" value="@Model.Email" name="Email" />
+		<input type="text" value="@Model.Phone" name="Phone" />
+		<input type="text" value="@Model.Address" name="Address" />
+		<input type="text" value="@Model.Sq1" name="Sq1" />
+		<input type="text" value="@Model.Sq2" name="Sq2" />
+		<input type="submit" value="update" />
+	</form>
+	if (ViewBag.i > 0)
+	{
+		<div class="btn btn-success">Data modified successfuly</div>
+	}
+}

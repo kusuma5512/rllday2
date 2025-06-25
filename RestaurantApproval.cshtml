@@ -1,0 +1,46 @@
+﻿@model List<Foodiee.Models.Restaurant>
+<style>
+	.card {
+		border: 2px solid;
+		padding: 20px;
+		margin: 10px;
+		border-radius: 8px;
+		background-color: white;
+		border-color: darkgoldenrod;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+</style>
+<div class="row text-center">
+	@{
+		if (Model != null)
+		{
+			foreach (var i in Model)
+			{
+				<div class="col-md-3">
+					<div class="card">
+						<div class="card-header">Users</div>
+						<div class="card-body">
+							<div>Restaurant id : @i.RestaurantId</div>
+							<div>Name : @i.RestName</div>
+							<div>Restaurant location : @i.Location</div>
+							<div>Description : @i.Description</div>
+							<div>Mobile number : @i.PhoneNo</div>
+							<div>Address : @i.Email</div>
+						</div>
+						<footer>
+							<a href="@Url.Action("UpdateRestaurantStatus","Admin", new { restid = i.RestaurantId, Status="approved" })"
+							   class="btn btn-info">Approve</a>
+							<a href="@Url.Action("UpdateRestaurantStatus", "Admin", new { restid = i.RestaurantId, Status="rejected"})"
+							   class="btn btn-danger">Reject</a>
+						</footer>
+					</div>
+				</div>
+			}
+		}
+		else
+		{
+			<div>NoData Found</div>
+		}
+
+	}
+</div>

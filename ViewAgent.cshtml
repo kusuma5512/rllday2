@@ -1,0 +1,53 @@
+﻿@model List<Foodiee.Models.DeliverReg>
+
+<style>
+	.card {
+		border: 2px solid;
+		padding: 20px;
+		margin: 10px;
+		border-radius: 8px;
+		background-color: white;
+		border-color: darkgoldenrod;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	}
+</style>
+<div class="row text-center">
+	@{
+		if (Model != null)
+		{
+			foreach (var i in Model)
+			{
+				<div class="col-md-3">
+					<div class="card">
+						<div class="card-header">Users</div>
+						<div class="card-body">
+							<div>User ID: @i.UserId</div>
+							<div>Name: @i.Fullname</div>
+							<div>Username: @i.Username</div>
+							<div>Email: @i.Email</div>
+							<div>Mobile Number: @i.Phone</div>
+							<div>Address: @i.Area, @i.City</div>
+							<div>Age: @i.Age</div>
+							<div>DL No: @i.DlNo</div>
+							<div>Vehicle No: @i.VehicleNo</div>
+							<div>Security Q1: @i.Sq1</div>
+							<div>Security Q2: @i.Sq2</div>
+
+						</div>
+						<footer>
+							<a href="@Url.Action("UpdateAgent","Admin", new { id = i.UserId })"
+							   class="btn btn-info">Update</a>
+							<a href="@Url.Action("DeleteAgent", "Admin", new { id = i.UserId })"
+							   class="btn btn-danger">Delete</a>
+						</footer>
+					</div>
+				</div>
+			}
+		}
+		else
+		{
+			<div>NoData Found</div>
+		}
+
+	}
+</div>
